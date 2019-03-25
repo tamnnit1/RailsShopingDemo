@@ -10,3 +10,6 @@ OrderStatus.create! id: 1, name: "In Progress"
 OrderStatus.create! id: 2, name: "Placed"
 OrderStatus.create! id: 3, name: "Shipped"
 OrderStatus.create! id: 4, name: "Cancelled"
+
+User.delete_all
+User.new({ :email => 'ntam444@gmail.com', :password => 'admin123', :password_confirmation => 'admin123'}).save
