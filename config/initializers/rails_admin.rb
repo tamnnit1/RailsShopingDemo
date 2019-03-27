@@ -6,7 +6,7 @@ RailsAdmin.config do |config|
   config.parent_controller = "::ApplicationController"
 
   config.authorize_with do |controller|
-    unless current_user && current_user.admin?
+    unless current_user.try(:admin?)
       redirect_to main_app.admin_sing_in_path
     end
   end

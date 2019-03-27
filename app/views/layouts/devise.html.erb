@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Shoping</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+  <div class="container main">
+
+      <%= yield %>
+
+
+  </div>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</body>
+
+</html>
