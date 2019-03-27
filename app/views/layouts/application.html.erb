@@ -34,6 +34,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
           </li>
+          <li class="nav-item" id="cart-text">
+            <%= render 'layouts/cart_text' %></h1>
+          </li>
           <% if current_user %>
             <li class="nav-item">
               <%= link_to "Logout", destroy_user_session_path,class:"nav-link", method: :delete %>

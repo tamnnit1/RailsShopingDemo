@@ -1,0 +1,9 @@
+<% if @order.errors.any? || @order_item.errors.any? %>
+var msg = "";
+  <% @order.errors.full_messages.each do |msg| %>
+        msg += '<%= msg %>' + '\n'; 
+  <% end %>
+alert(msg);
+<% else %>
+  $("#cart-text").html("<%= escape_javascript(render 'layouts/cart_text') %>");
+<% end %>
