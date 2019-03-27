@@ -7,7 +7,12 @@ RailsAdmin.config do |config|
 
   config.authorize_with do |controller|
     unless current_user.try(:admin?)
-      redirect_to main_app.admin_sing_in_path
+      if current_user
+        current_user.update_attributes(:expire_at_next_request=>false)
+        sign_out current_user
+      end
+      session[:admin_flg] = 1
+      redirect_to new_session_path(:user)
     end
   end
 
