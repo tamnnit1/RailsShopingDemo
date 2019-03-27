@@ -12,4 +12,4 @@ OrderStatus.create! id: 3, name: "Shipped"
 OrderStatus.create! id: 4, name: "Cancelled"
 
 User.delete_all
-User.new({ :email => 'ntam444@gmail.com', :password => 'admin123', :password_confirmation => 'admin123'}).save
+User.new({ :email => 'ntam444@gmail.com', :password => 'admin123', :password_confirmation => 'admin123', :admin => 1}).save
