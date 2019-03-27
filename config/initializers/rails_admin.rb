@@ -7,7 +7,7 @@ RailsAdmin.config do |config|
 
   config.authorize_with do |controller|
     unless current_user.try(:admin?)
-      redirect_to main_app.admin_sing_in_path
+      redirect_to main_app.admin_sign_in_path
     end
   end
 

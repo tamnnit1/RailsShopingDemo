@@ -7,7 +7,7 @@
     end
 
     def create
-      @referer_url = root_path
+      get_pre_login_url
       super
     end
 
@@ -28,7 +28,7 @@
     def after_sign_in_path_for resource
       sign_in_url = url_for(action: "new", controller: "sessions", only_path: false, protocol: "http")
       if @referer_url == sign_in_url
-        super
+        rails_admin_path
       else
         @referer_url || root_path
       end
